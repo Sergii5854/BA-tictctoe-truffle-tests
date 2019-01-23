@@ -1,4 +1,4 @@
-# tictactoeth_sol
+# BA  TicTacTo Eth Sol
 
 These are the solidity contracts for tictacto Eth developed with the truffle framework.
 
