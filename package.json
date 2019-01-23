@@ -10,11 +10,7 @@
     "test": "truffle test"
   },
   "dependencies": {
-    "babel-register": "^6.26.0",
-    "ganache-cli": "^6.0.3",
-    "truffle-hdwallet-provider": "0.0.3",
-    "@digix/tempo": "^0.2.0",
-    "solidity-coverage": "^0.4.7"
+
   },
   "keywords": [
     "ethereum, sol, blockchain"
