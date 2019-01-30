@@ -47,8 +47,8 @@ contract TicTacToe
             activeUser = player2;
             isReady = false;
             uint8 counter = 3;
-            for (uint8 i = 0; i < 2; i++) {
-                for (uint8 j = 0; j < 2; j++) {
+            for (uint8 i = 0; i < 3; i++) {
+                for (uint8 j = 0; j < 3; j++) {
                     board[i][j] = counter;
                     counter++;
                 }
@@ -75,9 +75,9 @@ contract TicTacToe
         checkWinner();
 
         if (!checkBoard()) {
-//            checkWinner();
             reset();
         }
+
     }
 
     function reset() internal {
@@ -102,17 +102,22 @@ contract TicTacToe
             board[1][1] == board[1][0] && board[1][1] == board[1][2])   // center-h
         {
             gameWinner = board[1][1];
+            reset();
         } else if (
             board[0][1] == board[0][0] && board[0][1] == board[0][2] || //
             board[1][0] == board[0][0] && board[1][0] == board[2][0]
         ) {
             gameWinner = board[0][0];
+            reset();
         } else if (
             board[2][1] == board[2][0] && board[2][1] == board[2][2] ||
-            board[1][2] == board[0][2] && board[1][2] == board[2][2]) {
+            board[1][2] == board[0][2] && board[1][2] == board[2][2])
+        {
             gameWinner = board[2][2];
+            reset();
         } else {
             gameWinner = 0;
+
         }
 
 
@@ -122,9 +127,11 @@ contract TicTacToe
 
         for (uint8 i = 0; i < 2; i++) {
             for (uint8 j = 0; j < 2; j++) {
-                if (board[i][j] == 0) {
+
+                if (board[i][j] >  2 ) {
                     return true;
                 }
+
             }
         }
 
